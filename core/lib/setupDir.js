@@ -1,5 +1,3 @@
-"use strict"
-
 import * as fs from 'fs';
 import figlet from 'figlet';
 import { createSpinner } from 'nanospinner'
@@ -7,7 +5,9 @@ import { createFile, makeDir } from './customFsMethod.js';
 import { css, html } from './staticFilesContent.js';
 import { cp } from 'fs/promises';
 import chalk from 'chalk';
+import path from 'path';
 
+const __dirname = new URL('.', import.meta.url).pathname
 const spinner = createSpinner('Creating project\n')
 const sleep = (ms=2000) => new Promise((r)=> setTimeout(r, ms))
 
@@ -23,10 +23,7 @@ const setupDir = async (dir_name) =>{
                 await makeDir(`${dir.path}/src/js`)
                 await makeDir(`${dir.path}/src/styles`)
                 await createFile(`${dir.path}/src/styles/main.css`, css)
-                // await cp('favicon.svg', `${dir.path}/favicon.svg`)
-                fs.cp('favicon.svg', `${dir.path}/favicon.svg`, (err)=>{
-                    if(err) throw err
-                })
+                await cp(path.join(__dirname, '../../favicon.svg'), `${dir.path}/favicon.svg`)
                 await sleep() //just for the visual of spinner :)
                 spinner.success()
                 await dir.close()

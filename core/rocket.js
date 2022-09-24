@@ -1,5 +1,3 @@
-"use strict"
-
 import inquirer from 'inquirer'
 import setupDir from './lib/setupDir.js'
 
@@ -15,6 +13,8 @@ const askDirName = async () =>{
     await setupDir(rocket.dir_name)
 }
 
-const start = async () => await askDirName()
+const start = async () => {
+    await askDirName()
+}
 
 export default start
