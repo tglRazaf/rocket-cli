@@ -1,0 +1,25 @@
+{
+  "name": "rocket-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "bin": {
+    "rocket-cli": "./main.js"
+  },
+  "scripts": {
+    "init": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "chalk-animation": "^2.0.3",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.1.2",
+    "nanospinner": "^1.1.0",
+    "yargs": "^17.5.1"
+  }
+}
