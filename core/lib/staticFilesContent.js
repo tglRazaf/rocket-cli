@@ -4,11 +4,12 @@ const HTML = `<!DOCTYPE html>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="./rocket.png" type="image/x-icon">
+        <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
         <link rel="stylesheet" href="./src/styles/main.css">
         <title>Rocket</title>
     </head>
     <body>
+        <img src="./favicon.svg"/>
         <h1>Hello rocketers</h1>
         <p>
             Thank you for choosing rocket-cli <br>
@@ -69,6 +70,11 @@ button:hover{
 
 button:hover a{
     color: white;
+}
+
+img{
+    height: 100px;
+    width: 100px;
 }
 `
 
