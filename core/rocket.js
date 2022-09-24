@@ -1,3 +1,5 @@
+"use strict"
+
 import inquirer from 'inquirer'
 import setupDir from './lib/setupDir.js'
 

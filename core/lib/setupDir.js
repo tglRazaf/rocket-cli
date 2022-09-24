@@ -1,3 +1,5 @@
+"use strict"
+
 import * as fs from 'fs';
 import figlet from 'figlet';
 import { createSpinner } from 'nanospinner'
@@ -21,7 +23,10 @@ const setupDir = async (dir_name) =>{
                 await makeDir(`${dir.path}/src/js`)
                 await makeDir(`${dir.path}/src/styles`)
                 await createFile(`${dir.path}/src/styles/main.css`, css)
-                await cp('favicon.svg', `${dir.path}/favicon.svg`)
+                // await cp('favicon.svg', `${dir.path}/favicon.svg`)
+                fs.cp('favicon.svg', `${dir.path}/favicon.svg`, (err)=>{
+                    if(err) throw err
+                })
                 await sleep() //just for the visual of spinner :)
                 spinner.success()
                 await dir.close()
