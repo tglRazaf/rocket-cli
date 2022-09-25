@@ -1,7 +1,7 @@
 import inquirer from 'inquirer'
 import setupDir from './lib/setupDir.js'
 
-const askDirName = async () =>{
+const init = async () =>{
     const rocket = await inquirer.prompt({
         name: 'dir_name',
         type: 'input',
@@ -13,8 +13,4 @@ const askDirName = async () =>{
     await setupDir(rocket.dir_name)
 }
 
-const start = async () => {
-    await askDirName()
-}
-
-export default start
+export default init
