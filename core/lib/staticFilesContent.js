@@ -78,4 +78,4 @@ img{
 }
 `
 
-export {HTML as html, CSS as css}
+export {HTML as htmlFileContent, CSS as cssFileContent}

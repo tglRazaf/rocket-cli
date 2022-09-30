@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import figlet from 'figlet';
 import { createSpinner } from 'nanospinner'
 import { createFile, makeDir } from './customFsMethod.js';
-import { css, html } from './staticFilesContent.js';
+import { cssFileContent, htmlFileContent } from './staticFilesContent.js';
 import { cp } from 'fs/promises';
 import chalk from 'chalk';
 import path from 'path';
@@ -17,12 +17,12 @@ const setupDir = async (dir_name) =>{
         fs.opendir(`${dir_name}`, async (err, dir)=>{
             if(err) throw err
             try {
-                await createFile(`${dir.path}/index.html`, html)
+                await createFile(`${dir.path}/index.html`, htmlFileContent)
                 await makeDir(`${dir.path}/src`)
                 await makeDir(`${dir.path}/src/assets`)
                 await makeDir(`${dir.path}/src/js`)
                 await makeDir(`${dir.path}/src/styles`)
-                await createFile(`${dir.path}/src/styles/main.css`, css)
+                await createFile(`${dir.path}/src/styles/main.css`, cssFileContent)
                 await cp(path.join(__dirname, '../../favicon.svg'), `${dir.path}/favicon.svg`)
                 await sleep() //just for the visual of spinner :)
                 spinner.success()
