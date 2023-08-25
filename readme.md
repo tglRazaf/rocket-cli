@@ -1,6 +1,6 @@
 # rocket-cli
 
-this is a cli tool for creating a from scratch html/css and js project without nodejs
+this is a cli tool for creating a static from scratch html/css and js project without nodejs
 
 ## Installation
 
